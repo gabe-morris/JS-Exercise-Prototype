@@ -73,13 +73,16 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car(model,milesPerGallon) {
+ function Car(model,milesPerGallon){
   this.model = model;
-  this.milesperGallon = milesPerGallon;
+  this.milesPerGallon = milesPerGallon;
   this.tank = 0;
   this.odometer = 0;
   }
-  
+
+  Car.prototype.fill = function(gallons){
+    return this.tank += gallons;
+  }
   
   /*
     TASK 3
@@ -88,18 +91,15 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
-  }
- 
-  
+ function Baby(name,age,favoriteToy){
+ }
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Window Binding if no other binding applies it defaults to window/global object
+    2. Implicit Binding applies to object with methods, refers to the left of the dot
+    3. Explicit Binding immediately invokes the function ex: call or apply
+    4. New Binding creates a new object and 'this' refers to it
   */
   
   
